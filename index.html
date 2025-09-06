@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>رزومه — ماجد</title>
+  <meta name="description" content="رزومه و پرتفولیو — توسعه‌دهنده Frontend / Fullstack">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c3aed;
+      --accent-2:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:16px;
+      --fw-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 10%), radial-gradient(800px 400px at 90% 90%, rgba(6,182,212,0.08), transparent 10%), var(--bg);
+      color:#e6eef8;
+      font-family:var(--fw-sans);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:30px;
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:28px;
+    }
+    @media (max-width:900px){
+      .wrap{grid-template-columns:1fr; padding-bottom:40px}
+      .sidebar{order:2}
+      .main{order:1}
+    }
+    .card{
+      background:linear-gradient(180deg,var(--glass),var(--glass-2));
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+    .sidebar .avatar{
+      width:120px;height:120px;border-radius:20px;overflow:hidden;margin:0 auto;display:block;box-shadow:0 8px 30px rgba(0,0,0,0.6);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:22px;margin:12px 0 2px;text-align:center}
+    h2{font-size:14px;color:var(--muted);text-align:center;margin:0 0 12px}
+    .headline{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:6px}
+    .badge{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:700;font-size:12px}
+    .contact{margin-top:18px;display:grid;gap:10px}
+    .contact a{display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}
+    .skill{padding:6px 10px;border-radius:10px;background:rgba(255,255,255,0.02);font-size:13px}
+    .progress{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#4f46e5);}
+    .main .hero{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .hero .intro{max-width:60%}
+    @media (max-width:900px){.hero .intro{max-width:100%}}
+    .intro h3{margin:0;font-size:20px}
+    .intro p{color:var(--muted);margin-top:8px}
+    .cta{display:flex;gap:12px;margin-top:14px}
+    .btn{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none;font-weight:700}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 12px;border-radius:12px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    @media (max-width:900px){.projects{grid-template-columns:1fr}}
+    .proj{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .proj h4{margin:0 0 8px}
+    .proj p{color:var(--muted);font-size:14px}
+    .timeline{margin-top:18px}
+    .timeline-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+    .timeline-item .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:6px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}
+    .searchbar{display:flex;gap:8px;margin-top:12px}
+    .searchbar input{flex:1;padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit}
+    .resume-actions{display:flex;gap:8px;justify-content:flex-end}
+    footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+    .floating{position:fixed;left:24px;bottom:24px;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03)}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,23,0.6),rgba(2,6,23,0.8));}
+    .modal .box{width:min(900px,95%);padding:20px;border-radius:14px}
+    .show{display:flex}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    .skill-pill{display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:12px;background:rgba(255,255,255,0.02)}
+    small{color:var(--muted)}
+    .download{display:inline-flex;gap:8px;align-items:center}
+    .animated-ghost{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="card sidebar">
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="avatar"></div>
+      <h1>نام شما</h1>
+      <h2>توسعه‌دهنده Frontend / Fullstack</h2>
+      <div class="headline"><span class="badge">Open to work</span></div>
+      <div class="contact">
+        <a href="#majuhesam@gmail.com">📧 ایمیل — majuhesam@gmai.com</a>
+        <a href="#">🔗 لینکدین / گیت‌هاب</a>
+        <a href="#">🌐 وبلاگ / پروژه‌ها</a>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h3 style="text-align:center;margin:0 0 10px">مهارت‌ها</h3>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">Python</span>
+          <span class="skill">React</span>
+        </div>
+        <div style="margin-top:12px">
+          <small>JavaScript</small>
+          <div class="progress" aria-hidden><i style="width:88%"></i></div>
+          <small>CSS / UI</small>
+          <div class="progress" aria-hidden style="margin-top:6px"><i style="width:82%"></i></div>
+        </div>
+      </div>
+      <div style="margin-top:12px;text-align:center">
+        <a class="btn download" id="downloadResume" href="#">⬇ دانلود PDF رزومه</a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="card">
+        <div class="hero">
+          <div class="intro">
+            <h3>سلام — من ماجد هستم</h3>
+            <p>من توسعه‌دهنده‌ای هستم که با HTML، CSS و JavaScript کار می‌کنم و تجربهٔ ساخت محصولات واکنش‌گرا و باکیفیت را دارم. این سایت یک صفحه‌ای، پرتفولیو و رزومه‌ام است.</p>
+            <div class="cta">
+              <a class="btn" id="hireBtn">📨 تماس برای همکاری</a>
+              <a class="ghost" id="scrollProjects">📁 پروژه‌ها</a>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <div class="card animated-ghost" style="width:220px;border-radius:14px;padding:18px">
+              <h4 style="margin:0">در یک نگاه</h4>
+              <p style="color:var(--muted);margin-top:8px">تجربه: 4+ سال · پروژه‌های واقعی · کدنویسی تمیز</p>
+              <div style="margin-top:10px;display:flex;gap:8px;justify-content:center">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+          <div style="flex:1">
+            <h3 style="margin:0 0 8px">پروژه‌های منتخب</h3>
+            <div class="filters">
+              <button class="ghost" data-filter="all">همه</button>
+              <button class="ghost" data-filter="frontend">Frontend</button>
+              <button class="ghost" data-filter="full">Fullstack</button>
+            </div>
+            <div class="projects" id="projects">
+              <div class="proj" data-type="frontend">
+                <h4>رابط کاربری فروشگاهی</h4>
+                <p>SPA واکنش‌گرا با فیلتر و تجربهٔ کاربری عالی.</p>
+                <div style="margin-top:10px;display:flex;gap:8px">
+                  <a class="ghost" data-open="p1">مشاهده</a>
+                  <a class="ghost" href="#">کد</a>
+                </div>
+              </div>
+              <div class="proj" data-type="full">
+                <h4>داشبورد مدیریت</h4>
+                <p>داشبورد با نمودارها و API ساده برای مدیریت محتوا.</p>
+                <div style="margin-top:10px;display:flex;gap:8px">
+                  <a class="ghost" data-open="p2">مشاهده</a>
+                  <a class="ghost" href="#">کد</a>
+                </div>
+              </div>
+              <div class="proj" data-type="frontend">
+                <h4>لندینگ واکنش‌گرا</h4>
+                <p>بهینه‌شده برای تبدیل و A/B ساده.</p>
+                <div style="margin-top:10px;display:flex;gap:8px">
+                  <a class="ghost" data-open="p3">مشاهده</a>
+                  <a class="ghost" href="#">کد</a>
+                </div>
+              </div>
+              <div class="proj" data-type="full">
+                <h4>چت‌اپ ساده</h4>
+                <p>پروتوتایپ چت با WebSocket (سمبولیک، front-end demo).</p>
+                <div style="margin-top:10px;display:flex;gap:8px">
+                  <a class="ghost" data-open="p4">مشاهده</a>
+                  <a class="ghost" href="#">کد</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width:320px">
+            <h3 style="margin:0 0 8px">تجربهٔ کاری</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="dot"></div>
+                <div>
+                  <strong>توسعه‌دهنده Frontend — شرکت الف</strong>
+                  <div><small>2022 — تاکنون</small></div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="dot"></div>
+                <div>
+                  <strong>مهندس نرم‌افزار — شرکت ب</strong>
+                  <div><small>2019 — 2022</small></div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:12px;text-align:center">
+              <a class="btn" id="contact">📨 درخواست جلسه</a>
+            </div>
+          </div>
+        </div>
+        <footer>© 2025 — نام شما — طراحی واکنش‌گرا و مدرن</footer>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3 style="margin:0 0 8px">نمونهٔ تماس (فُرم)</h3>
+        <form id="contactForm" style="display:grid;gap:10px">
+          <input name="name" placeholder="نام" required style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit">
+          <input name="email" placeholder="ایمیل" required type="email" style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit">
+          <textarea name="message" placeholder="چطور می‌تونم کمکتون کنم؟" style="padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.02);color:inherit;min-height:120px"></textarea>
+          <div style="display:flex;gap:8px;justify-content:flex-end">
+            <button type="submit" class="btn">ارسال</button>
+            <button type="button" class="ghost" id="clearForm">پاک کردن</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+  
+  <div class="modal" id="modal">
+    <div class="box card" id="modalBox">
+      <div id="modalContent"></div>
+      <div style="text-align:left;margin-top:12px"><a class="ghost" id="closeModal">بستن</a></div>
+    </div>
+  </div>
+  <script>
+    const projectsEl = document.getElementById('projects')
+    document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',() => {
+      const f=b.getAttribute('data-filter')
+      Array.from(projectsEl.children).forEach(p=>{
+        if(f==='all' || p.dataset.type===f){p.style.display='block'}else{p.style.display='none'}
+      })
+    }))
+    document.getElementById('scrollProjects').addEventListener('click',()=>{projectsEl.scrollIntoView({behavior:'smooth',block:'center'})})
+    document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>{
+      const id=el.getAttribute('data-open')
+      const modal=document.getElementById('modal')
+      const content=document.getElementById('modalContent')
+      if(id==='p1')content.innerHTML='<h3>رابط کاربری فروشگاهی</h3><p>شرح پروژه، تکنولوژی‌ها: HTML/CSS/JS — عملکرد: فیلتر، سبد خرید، ریسپانسیو.</p>'
+      if(id==='p2')content.innerHTML='<h3>داشبورد مدیریت</h3><p>شرح پروژه: صفحهٔ مدیریت با نمودارها، جدول و اتصالات API (نمونهٔ front-end).</p>'
+      if(id==='p3')content.innerHTML='<h3>لندینگ واکنش‌گرا</h3><p>شرح: لندینگ با تمرکز روی تبدیل، فرم‌های هوشمند و تست A/B.</p>'
+      if(id==='p4')content.innerHTML='<h3>چت‌اپ ساده (دمو)</h3><p>پروتوتایپ front-end با UI ساده و پیام‌ها.</p>'
+      modal.classList.add('show')
+    }))
+    document.getElementById('closeModal').addEventListener('click',()=>document.getElementById('modal').classList.remove('show'))
+    document.getElementById('contactForm').addEventListener('submit',(e)=>{
+      e.preventDefault()
+      const fm=new FormData(e.target)
+      const data=Object.fromEntries(fm.entries())
+      alert('پیام شما ثبت شد. ایمیل: '+data.email)
+      e.target.reset()
+    })
+    document.getElementById('clearForm').addEventListener('click',()=>document.getElementById('contactForm').reset())
+    document.getElementById('hireBtn').addEventListener('click',()=>{
+      document.getElementById('contact').click()
+      document.getElementById('contactForm').scrollIntoView({behavior:'smooth'})
+    })
+    function createPDF(){
+      const blob=new Blob([`رزومه - نام شما\nتجربه: 4+ سال\nمهارت‌ها: HTML, CSS, JS, Node.js, Python`],{type:'text/plain'})
+      return URL.createObjectURL(blob)
+    }
+    const dl=document.getElementById('downloadResume')
+    dl.href=createPDF()
+    dl.setAttribute('download','resume.txt')
+    (function animateBadges(){
+      const b=document.querySelectorAll('.badge')
+      b.forEach(x=>x.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}],{duration:2400,iterations:Infinity}))
+    })()
+  </script>
+</body>
+</html>
